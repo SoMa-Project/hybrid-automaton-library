@@ -183,6 +183,14 @@ namespace ha {
 		virtual const std::string getType() const;
 		virtual void setType(const std::string& new_type);
 
+		void setState(const int state) {
+			_state = state;
+		}
+
+		const int getState() const {
+			return _state;
+		}
+
 		template <typename T> void setArgument(const std::string& field_name, const T& field_value)
 		{
 			ha_stringstream ha_oss;
@@ -376,6 +384,11 @@ namespace ha {
          * @see getArgument()
          */
 		std::map<std::string, std::string> _additional_arguments;
+
+		/**
+         * @brief the state of this ControlMode
+         */
+		int _state;
 	};
 
 }

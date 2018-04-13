@@ -39,7 +39,8 @@ namespace ha {
 		_a_max(),
 		_do_reinterpolation(false),
 		_priority(0.0),
-		_name("default")
+		_name("default"),
+		_state(0)
 	{
 	}
 
@@ -48,7 +49,7 @@ namespace ha {
 
 	}
 
-	Controller::Controller(const ha::Controller &controller)
+	Controller::Controller(const ha::Controller &controller):_state(0)
 	{
 		this->_goal = controller._goal;
 		this->_goal_is_relative = controller._goal_is_relative;		
